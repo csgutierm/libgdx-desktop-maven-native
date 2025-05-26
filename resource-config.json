@@ -1,0 +1,12 @@
+{
+  "resources": [
+    {"pattern": ".*\\.jpg$"},
+    {"pattern": ".*\\.png$"},
+    {"pattern": ".*\\.wav$"},
+    {"pattern": ".*\\.mp3$"},
+    {"pattern": ".*\\.txt$"},
+    {"pattern": ".*\\.json$"},
+    {"pattern": ".*\\.ttf$"},
+    {"pattern": ".*\\.dll$"}
+  ]
+}

@@ -1,0 +1,54 @@
+# === Maven ===
+target/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+
+# === LibGDX ===
+android/assets/
+html/build/
+desktop/build/
+core/build/
+
+# === GraalVM native-image outputs ===
+*.native-image/
+*.exe
+*.h
+*.so
+*.dylib
+*.dll
+
+# === IDEs ===
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+# === Logs and temp files ===
+*.log
+*.tmp
+*.swp
+*.bak
+
+# === Java crash logs ===
+hs_err_pid*
+replay_pid*
+
+# === Compiled native output ===
+build/
+out/
