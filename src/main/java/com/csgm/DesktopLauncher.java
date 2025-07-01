@@ -10,12 +10,15 @@ public class DesktopLauncher {
 	
     public static void launch() {
         Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
-        config.setTitle("Mi LibGDX App");
+        config.setTitle("Cartas");
         config.setResizable(false);
-        config.setWindowedMode(resolutionX, resolutionY); // Tama√±o inicial de la ventana
-        config.useVsync(true); // Sincronizaci√≥n vertical
-        config.setForegroundFPS(30); // FPS m√°ximos
+        config.setWindowedMode(resolutionX, resolutionY); // TamaÒo inicial de la ventana
+        config.useVsync(true); // SincronizaciÛn vertical
+        config.setForegroundFPS(60); // FPS m·ximos cuando al frente/activa
+        config.setWindowIcon("imw_ncs.png");
 
-        new Lwjgl3Application(new MyGdxGame(), config);
+       // new Lwjgl3Application(new MyGdxGame(), config);
+        
+        new Lwjgl3Application(new GameMain(), config);
     }
 }

@@ -20,7 +20,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	private int defaultWidth = DesktopLauncher.resolutionX;
 	private int defaultHeight = DesktopLauncher.resolutionY;
 
-	// Opciones de resoluciÃ³n
+	// Opciones de resolución
 	private int[] widths = { 1280, 1920, 2560 };
 	private int[] heights = { 720, 1080, 1440 };
 	private int currentResolutionIndex = 1;
@@ -31,10 +31,10 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void create() {
 		batch = new SpriteBatch();
 		img = new Texture("wallpaper_69_1920.jpg");
-		img.setFilter(TextureFilter.Linear, TextureFilter.Linear); // mejora calidad al escalar la imagen	
+		img.setFilter(TextureFilter.Linear, TextureFilter.Linear); // mejora calidad al escalar la imagen
 		//font = new BitmapFont();
-		//font.getData().setScale(3);	    
-	    font = FontFactory.createFont("SamsungSans-Regular.ttf", 36);		
+		//font.getData().setScale(3);
+	    font = FontFactory.createFont("SamsungSans-Regular.ttf", 36);
 		shapeRenderer = new ShapeRenderer();
 	}
 
@@ -53,12 +53,12 @@ public class MyGdxGame extends ApplicationAdapter {
 	}
 
 	private void handleInput() {
-		// Alternar menÃº con la tecla M
+		// Alternar menú con la tecla M
 		if (Gdx.input.isKeyJustPressed(Input.Keys.M)) {
 			showMenu = !showMenu;
 		}
 
-		// Cambiar tamaÃ±o de ventana
+		// Cambiar tamaño de ventana
 		if (showMenu) {
 			if (Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
 				cycleResolution(1);
@@ -76,7 +76,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	private void cycleResolution(int direction) {
 		currentResolutionIndex = (currentResolutionIndex + direction + widths.length) % widths.length;
-		Gdx.graphics.setWindowedMode(widths[currentResolutionIndex], heights[currentResolutionIndex]);		
+		Gdx.graphics.setWindowedMode(widths[currentResolutionIndex], heights[currentResolutionIndex]);
 	}
 
 	private void toggleFullscreen() {
@@ -90,6 +90,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	private void renderBackground() {
 		batch.begin();
 		batch.draw(img, 0, 0, defaultWidth, defaultHeight);
+		font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 20, defaultHeight - 20);
 		batch.end();
 	}
 
@@ -105,13 +106,13 @@ public class MyGdxGame extends ApplicationAdapter {
 		shapeRenderer.end();
 
 		batch.begin();
-		font.draw(batch, "Menu de ConfiguraciÃ³n", menuX + menuWidth * 0.1f, menuY + menuHeight * 0.9f);
-		font.draw(batch, "ResoluciÃ³n actual: " + widths[currentResolutionIndex] + "x" + heights[currentResolutionIndex],
+		font.draw(batch, "Menu de Configuración", menuX + menuWidth * 0.1f, menuY + menuHeight * 0.9f);
+		font.draw(batch, "Resolución actual: " + widths[currentResolutionIndex] + "x" + heights[currentResolutionIndex],
 				menuX + menuWidth * 0.1f, menuY + menuHeight * 0.7f);
-		font.draw(batch, "Flechas arriba/abajo: Cambiar resoluciÃ³n", menuX + menuWidth * 0.1f,
+		font.draw(batch, "Flechas arriba/abajo: Cambiar resolución", menuX + menuWidth * 0.1f,
 				menuY + menuHeight * 0.6f);
 		font.draw(batch, "Enter: Alternar pantalla completa", menuX + menuWidth * 0.1f, menuY + menuHeight * 0.5f);
-		font.draw(batch, "M: Cerrar menÃº", menuX + menuWidth * 0.1f, menuY + menuHeight * 0.4f);
+		font.draw(batch, "M: Cerrar menú", menuX + menuWidth * 0.1f, menuY + menuHeight * 0.4f);
 		batch.end();
 	}
 
